@@ -11,6 +11,7 @@ export default function Home() {
           <Suspense>
             <FiveSeconds />
           </Suspense>
+          <div>Instant</div>
         </section>
       </main>
     </div>
