@@ -6,10 +6,37 @@ export default function Home() {
       <main className="">
         <section>
           <Suspense>
-            <TenSeconds />
+            <NSeconds value={10} />
           </Suspense>
           <Suspense>
-            <FiveSeconds />
+            <NSeconds value={9} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={8} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={7} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={6} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={5} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={4} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={3} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={2} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={1} />
+          </Suspense>
+          <Suspense>
+            <NSeconds value={0} />
           </Suspense>
           <div>Instant</div>
         </section>
@@ -18,14 +45,8 @@ export default function Home() {
   );
 }
 
-const TenSeconds = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+const NSeconds = async ({ value }: { value: number }) => {
+  await new Promise((resolve) => setTimeout(resolve, value * 1000));
 
-  return <div>TenSeconds</div>;
-};
-
-const FiveSeconds = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-
-  return <div>FiveSeconds</div>;
+  return <div>{value} seconds</div>;
 };
