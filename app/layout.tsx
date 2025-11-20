@@ -25,6 +25,7 @@ export default async function RootLayout({
 }>) {
   const userAgent = await auth();
   console.log(userAgent);
+
   return (
     <html lang="en">
       <body
